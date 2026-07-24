@@ -1,0 +1,147 @@
+.carouselContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+}
+
+.track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.slide {
+  width: calc(100% / 3);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 4px;
+}
+
+.singleCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.quoteIcon {
+  color: var(--accent);
+  opacity: 0.2;
+  margin-bottom: 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authorName {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.authorCompany {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* Nav Buttons */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+  transition: all var(--t-fast);
+}
+
+.navBtn:hover {
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prevBtn {
+  left: -22px;
+}
+
+.nextBtn {
+  right: -22px;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-bright);
+  border: none;
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+
+.activeDot {
+  background: var(--accent);
+  width: 28px;
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .carouselContainer {
+    max-width: 100%;
+  }
+  .prevBtn { left: 8px; }
+  .nextBtn { right: 8px; }
+  .singleCard { padding: 36px 24px; }
+}

@@ -1,0 +1,255 @@
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-top: var(--header-height);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: -5%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(79, 70, 229, 0.04) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.subheadline {
+  font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+}
+
+.trustRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.trustText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ---- Right Hero Image ---- */
+.imageWrap {
+  position: relative;
+  width: 100%;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.badgeTop {
+  top: 20px;
+  right: 20px;
+}
+
+.badgeBottom {
+  bottom: 20px;
+  left: 20px;
+}
+
+.badgeIcon {
+  color: var(--accent);
+}
+
+/* ---- Trusted By Strip ---- */
+.statsStrip {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+  padding: 22px 0;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+.trustedLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-xmuted);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.statsGrid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.statItem {
+  flex-shrink: 0;
+}
+
+.brandName {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+
+.brandName:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .subheadline {
+    text-align: center;
+  }
+  .ctas {
+    justify-content: center;
+  }
+  .imageCard {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .statsStrip {
+    padding: 16px 0;
+  }
+  .statsGrid {
+    gap: 8px;
+  }
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ctas > * {
+    width: 100%;
+    justify-content: center;
+  }
+  .badgeTop, .badgeBottom {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 8px;
+  }
+}

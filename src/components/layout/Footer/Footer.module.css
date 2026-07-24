@@ -1,0 +1,196 @@
+.footer {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 280px repeat(5, 1fr) 220px;
+  gap: 48px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+}
+
+/* Brand */
+.brand {}
+.brandDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  margin-top: 16px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  transition: color var(--t-fast);
+}
+.contactItem:hover { color: var(--accent); }
+.social {
+  display: flex;
+  gap: 8px;
+}
+.socialLink {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all var(--t-fast);
+}
+.socialLink:hover {
+  background: var(--accent-glow);
+  border-color: rgba(37, 99, 235, 0.3);
+  color: var(--accent);
+}
+
+/* Columns */
+.col {}
+.colTitle {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.colLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color var(--t-fast);
+}
+.colLink:hover { color: var(--text-primary); }
+
+/* Newsletter */
+.newsletter {}
+.newsletterDesc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.newsletterInput {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--t-fast);
+  width: 100%;
+}
+.newsletterInput::placeholder { color: var(--text-xmuted); }
+.newsletterInput:focus { border-color: var(--accent); }
+.newsletterBtn {
+  background: var(--accent);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 10px;
+  border-radius: var(--r-sm);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--t-fast);
+}
+.newsletterBtn:hover { background: var(--accent-vivid); }
+
+/* Badges */
+.badges {
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+}
+.badgesInner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.badgesLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.badgeList {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.badge {
+  padding: 4px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+/* Bottom */
+.bottom {
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+}
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyright {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.bottomLinks {
+  display: flex;
+  gap: 24px;
+}
+.bottomLink {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  transition: color var(--t-fast);
+}
+.bottomLink:hover { color: var(--accent); }
+
+@media (max-width: 1200px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .brand { grid-column: span 3; }
+  .newsletter { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+  .brand, .newsletter { grid-column: span 2; }
+  .bottomInner { flex-direction: column; gap: 12px; text-align: center; }
+}

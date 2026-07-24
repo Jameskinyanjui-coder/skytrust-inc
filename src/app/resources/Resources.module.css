@@ -1,0 +1,112 @@
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-light);
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.card:hover .iconWrap {
+  color: var(--color-bg-card);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.cardDesc {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.cardAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: gap var(--transition-fast);
+}
+
+.card:hover .cardAction {
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 32px; }
+}

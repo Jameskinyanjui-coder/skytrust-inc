@@ -1,0 +1,110 @@
+.hero {
+  padding: 100px 0 64px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.alphabetNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navLetter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: all var(--transition-fast);
+}
+
+.navLetter:hover {
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+.glossaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.letterSection {
+  display: flex;
+  gap: 48px;
+}
+
+.letterHeader {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  line-height: 1;
+  width: 60px;
+  position: sticky;
+  top: 100px;
+}
+
+.termsGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.termCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.termTitle {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.termDesc {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .termsGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .letterSection { flex-direction: column; gap: 24px; }
+  .letterHeader { position: static; font-size: 3rem; }
+}

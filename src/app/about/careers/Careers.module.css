@@ -1,0 +1,135 @@
+.hero {
+  padding: 100px 0 64px;
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.benefitCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.benefitCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--color-text-primary);
+}
+
+.benefitCard p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.rolesContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.deptTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roleCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: all var(--transition-fast);
+}
+
+.roleCard:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border-light);
+  transform: translateX(4px);
+}
+
+.roleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roleTitle {
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+}
+
+.roleMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.roleType {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.roleLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+}
+
+.roleAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.roleCard:hover .roleAction {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .benefitsGrid { grid-template-columns: 1fr; }
+  .roleCard { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .roleAction { align-self: flex-end; }
+}

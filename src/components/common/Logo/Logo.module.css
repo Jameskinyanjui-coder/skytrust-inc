@@ -1,0 +1,83 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.imageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.logoImage {
+  display: block;
+  transition: filter 0.25s ease;
+}
+
+.logo:hover .imageWrap {
+  transform: scale(1.06);
+}
+
+.logo:hover .logoImage {
+  filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.4));
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandMain {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sm .brandMain { font-size: 1.2rem; }
+.lg .brandMain { font-size: 1.85rem; }
+
+.brandAccent {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 40%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 1px;
+}
+
+.brandSub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0EA5E9;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(37, 99, 235, 0.12) 100%);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(14, 165, 233, 0.28);
+  margin-top: 4px;
+  display: inline-block;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+  transition: all 0.25s ease;
+}
+
+.logo:hover .brandSub {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.22) 0%, rgba(37, 99, 235, 0.22) 100%);
+  border-color: rgba(14, 165, 233, 0.5);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+}
+
+.sm .brandSub { font-size: 0.54rem; padding: 2px 6px; }
+.lg .brandSub { font-size: 0.72rem; padding: 4px 10px; }

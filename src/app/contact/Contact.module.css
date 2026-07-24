@@ -1,0 +1,176 @@
+.hero {
+  padding: 100px 0 64px;
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 48px;
+  margin-top: -32px;
+}
+
+.formPanel {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+}
+
+.panelTitle {
+  font-size: 1.5rem;
+  margin-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.2);
+}
+
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.emergencyBox {
+  background: rgba(255, 0, 0, 0.05); /* Slight red tint */
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  gap: 24px;
+}
+
+.emergencyIcon {
+  color: #ff4a4a;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.emergencyTitle {
+  font-size: 1.25rem;
+  color: #ff4a4a;
+  margin-bottom: 8px;
+}
+
+.emergencyText {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.emergencyNumber {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detailItem {
+  display: flex;
+  gap: 16px;
+}
+
+.iconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.detailValue {
+  font-size: 1.0625rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.detailValue:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 64px; }
+  .formRow { grid-template-columns: 1fr; gap: 24px; }
+}

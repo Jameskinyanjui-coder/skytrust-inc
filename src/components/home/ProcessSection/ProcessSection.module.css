@@ -1,0 +1,125 @@
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--step-gradient, linear-gradient(90deg, #2563EB, #06B6D4));
+}
+
+.stepBlue {
+  --step-gradient: linear-gradient(90deg, #2563EB, #06B6D4);
+  --step-icon-bg: #EFF6FF;
+  --step-icon-border: rgba(37, 99, 235, 0.25);
+  --step-icon-color: #2563EB;
+}
+
+.stepPurple {
+  --step-gradient: linear-gradient(90deg, #7C3AED, #EC4899);
+  --step-icon-bg: #F3E8FF;
+  --step-icon-border: rgba(124, 58, 237, 0.25);
+  --step-icon-color: #7C3AED;
+}
+
+.stepEmerald {
+  --step-gradient: linear-gradient(90deg, #059669, #10B981);
+  --step-icon-bg: #D1FAE5;
+  --step-icon-border: rgba(5, 150, 105, 0.25);
+  --step-icon-color: #059669;
+}
+
+.stepRose {
+  --step-gradient: linear-gradient(90deg, #E11D48, #F43F5E);
+  --step-icon-bg: #FFE4E6;
+  --step-icon-border: rgba(225, 29, 72, 0.25);
+  --step-icon-color: #E11D48;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  border-color: var(--step-icon-border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  background: var(--step-icon-bg, #EFF6FF);
+  border: 1px solid var(--step-icon-border, rgba(37, 99, 235, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--step-icon-color, #2563EB);
+  transition: transform var(--t-fast);
+}
+
+.step:hover .iconWrap {
+  transform: scale(1.08);
+}
+
+.stepNumber {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--step-icon-color, var(--accent));
+  opacity: 0.9;
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.stepDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .step {
+    padding: 24px 20px;
+  }
+}
