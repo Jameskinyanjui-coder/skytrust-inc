@@ -1,13 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Shield, Cloud, FileCheck, Activity, Target, Zap, ArrowRight, Code, Server } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import styles from './ServicesGrid.module.css';
 import { services } from '@/lib/data';
-
-const iconMap: Record<string, React.ElementType> = {
-  Shield, Cloud, FileCheck, Activity, Target, Zap, Code, Server
-};
 
 const colorThemes = [
   styles.themeBlue,
@@ -32,7 +28,6 @@ export default function ServicesGrid() {
 
         <div className={styles.grid}>
           {services.slice(0, 6).map((svc, idx) => {
-            const Icon = iconMap[svc.icon] || Shield;
             const themeClass = colorThemes[idx % colorThemes.length];
             return (
               <Link key={svc.slug} href={`/services/${svc.slug}`} className={`card ${styles.card} ${themeClass}`}>
@@ -42,9 +37,6 @@ export default function ServicesGrid() {
                   </div>
                 )}
                 <div className={styles.content}>
-                  <div className={styles.iconWrap}>
-                    <Icon size={24} />
-                  </div>
                   <h3 className={styles.name}>{svc.name}</h3>
                   <p className={styles.desc}>{svc.description}</p>
                   <span className={styles.learnMore}>

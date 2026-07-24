@@ -18,10 +18,10 @@ const pillars = [
       'Encrypted transit & resting data tunnels',
     ],
     highlights: [
-      { icon: '🔐', title: 'Identity-First', desc: 'Every request verified before access is granted' },
-      { icon: '🧱', title: 'Network Isolation', desc: 'Micro-segmented zones prevent lateral movement' },
-      { icon: '🔄', title: 'Continuous Validation', desc: 'Ongoing re-authentication throughout sessions' },
-      { icon: '🚀', title: 'Instant Enforcement', desc: 'Policies applied at the network edge in real time' },
+      { num: '01', title: 'Identity-First', desc: 'Every request verified before access is granted' },
+      { num: '02', title: 'Network Isolation', desc: 'Micro-segmented zones prevent lateral movement' },
+      { num: '03', title: 'Continuous Validation', desc: 'Ongoing re-authentication throughout sessions' },
+      { num: '04', title: 'Instant Enforcement', desc: 'Policies applied at the network edge in real time' },
     ],
   },
   {
@@ -37,10 +37,10 @@ const pillars = [
       'Automated audit report generation',
     ],
     highlights: [
-      { icon: '🛡️', title: 'SOC 2 Type II', desc: 'Full AICPA audit readiness & certification support' },
-      { icon: '🏥', title: 'HIPAA Assured', desc: 'PHI protection and breach notification protocols' },
-      { icon: '💳', title: 'PCI-DSS Level 1', desc: 'Cardholder environment segmentation & scanning' },
-      { icon: '📋', title: 'Auto Reporting', desc: 'Automated evidence packs generated on demand' },
+      { num: '01', title: 'SOC 2 Type II', desc: 'Full AICPA audit readiness & certification support' },
+      { num: '02', title: 'HIPAA Assured', desc: 'PHI protection and breach notification protocols' },
+      { num: '03', title: 'PCI-DSS Level 1', desc: 'Cardholder environment segmentation & scanning' },
+      { num: '04', title: 'Auto Reporting', desc: 'Automated evidence packs generated on demand' },
     ],
   },
   {
@@ -56,10 +56,10 @@ const pillars = [
       '15-minute response SLA',
     ],
     highlights: [
-      { icon: '👁️', title: 'Always-On SOC', desc: 'Round-the-clock threat detection & analyst review' },
-      { icon: '⚡', title: 'Rapid Response', desc: 'Confirmed incidents triaged within 15 minutes' },
-      { icon: '🧠', title: 'Threat Intel', desc: 'Global feeds enrich detection with attacker TTPs' },
-      { icon: '🖥️', title: 'EDR Coverage', desc: 'Endpoint telemetry correlated with network data' },
+      { num: '01', title: 'Always-On SOC', desc: 'Round-the-clock threat detection & analyst review' },
+      { num: '02', title: 'Rapid Response', desc: 'Confirmed incidents triaged within 15 minutes' },
+      { num: '03', title: 'Threat Intel', desc: 'Global feeds enrich detection with attacker TTPs' },
+      { num: '04', title: 'EDR Coverage', desc: 'Endpoint telemetry correlated with network data' },
     ],
   },
   {
@@ -75,10 +75,10 @@ const pillars = [
       'Disaster recovery & immutable backups',
     ],
     highlights: [
-      { icon: '☁️', title: 'Multi-Cloud', desc: 'Unified security posture across AWS, Azure & GCP' },
-      { icon: '📦', title: 'Container Security', desc: 'Kubernetes & Docker runtime hardening' },
-      { icon: '🏗️', title: 'IaC Auditing', desc: 'Security gates embedded in Terraform pipelines' },
-      { icon: '💾', title: 'Immutable Backups', desc: 'Air-gapped, encrypted disaster recovery snapshots' },
+      { num: '01', title: 'Multi-Cloud', desc: 'Unified security posture across AWS, Azure & GCP' },
+      { num: '02', title: 'Container Security', desc: 'Kubernetes & Docker runtime hardening' },
+      { num: '03', title: 'IaC Auditing', desc: 'Security gates embedded in Terraform pipelines' },
+      { num: '04', title: 'Immutable Backups', desc: 'Air-gapped, encrypted disaster recovery snapshots' },
     ],
   },
 ];
@@ -141,7 +141,7 @@ export default function SecurityMatrix() {
           <div className={styles.badgeGrid}>
             {activePillar.highlights.map((h, idx) => (
               <div key={idx} className={styles.badgeBox}>
-                <span className={styles.badgeEmoji} aria-hidden="true">{h.icon}</span>
+                <span className={styles.badgeNum}>{h.num}</span>
                 <span className={styles.badgeStat}>{h.title}</span>
                 <span className={styles.badgeLabel}>{h.desc}</span>
               </div>

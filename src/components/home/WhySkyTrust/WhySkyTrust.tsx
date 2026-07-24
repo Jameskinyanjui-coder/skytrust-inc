@@ -17,28 +17,28 @@ import styles from './WhySkyTrust.module.css';
 
 const reasons = [
   {
-    icon: Lightbulb,
+    stepNum: '01',
     title: 'Proactive Threat Hunting & Vulnerability Defense',
     desc: 'Beyond passive monitoring, our security engineers actively search for zero-days, misconfigurations, and anomalous behavior before automated alarms trigger.',
     themeClass: styles.themeBlue,
     badgeText: 'Proactive SOC',
   },
   {
-    icon: ShieldCheck,
+    stepNum: '02',
     title: 'Direct Access to Senior Security Architects',
     desc: 'Get immediate direct access to veteran security architects without automated bots, call centers, or ticketing delays when an urgent incident arises.',
     themeClass: styles.themePurple,
     badgeText: 'Human Expertise',
   },
   {
-    icon: RefreshCw,
+    stepNum: '03',
     title: 'Zero Trust & Cloud Native Infrastructure',
     desc: 'We architect security from the ground up, enforcing identity verification, micro-segmentation, and zero-trust policies across AWS, Azure, and GCP.',
     themeClass: styles.themeEmerald,
     badgeText: 'Cloud Native',
   },
   {
-    icon: Clock,
+    stepNum: '04',
     title: '<15 Minute Incident Containment SLA',
     desc: 'Our 24/7 SOC guarantees ultra-fast response times to isolate compromised endpoints and halt lateral threat movement across your enterprise network.',
     themeClass: styles.themeAmber,
@@ -69,13 +69,10 @@ export default function WhySkyTrust() {
           {/* Left Column: Interactive Reason Cards */}
           <div className={styles.cardsGrid}>
             {reasons.map((reason) => {
-              const Icon = reason.icon;
               return (
                 <div key={reason.title} className={`${styles.reasonCard} ${reason.themeClass}`}>
                   <div className={styles.cardHeader}>
-                    <div className={styles.iconBox}>
-                      <Icon size={22} />
-                    </div>
+                    <span className={styles.stepBadge}>{reason.stepNum}</span>
                     <span className={styles.categoryBadge}>{reason.badgeText}</span>
                   </div>
                   <h3 className={styles.reasonTitle}>{reason.title}</h3>

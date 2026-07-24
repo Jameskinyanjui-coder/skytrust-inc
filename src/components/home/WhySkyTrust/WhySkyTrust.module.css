@@ -86,21 +86,21 @@
   margin-bottom: 16px;
 }
 
-.iconBox {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--icon-bg, rgba(37, 99, 235, 0.1));
+.stepBadge {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
   color: var(--icon-color, #2563EB);
-  border: 1px solid var(--icon-border, rgba(37, 99, 235, 0.2));
+  background: var(--icon-bg, rgba(37, 99, 235, 0.1));
+  border: 1px solid var(--icon-border, rgba(37, 99, 235, 0.25));
+  padding: 4px 10px;
+  border-radius: 8px;
+  letter-spacing: -0.02em;
   transition: transform var(--transition-base);
 }
 
-.reasonCard:hover .iconBox {
-  transform: scale(1.08);
+.reasonCard:hover .stepBadge {
+  transform: scale(1.06);
 }
 
 .categoryBadge {
