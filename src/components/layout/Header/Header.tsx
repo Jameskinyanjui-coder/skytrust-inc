@@ -152,6 +152,10 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className={styles.actions}>
+          <span className={styles.statusPill}>
+            <span className={styles.statusDot} />
+            SOC Operational
+          </span>
           <a href="tel:4692675806" className={styles.emergencyBtn} title="24/7 Emergency Incident Hotline">
             <Phone size={14} className={styles.emergencyIcon} />
             <span>24/7 Emergency</span>

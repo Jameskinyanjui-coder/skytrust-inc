@@ -2,6 +2,7 @@ import HeroSection from '@/components/home/HeroSection/HeroSection';
 import LiveStats from '@/components/home/LiveStats/LiveStats';
 import ServicesGrid from '@/components/home/ServicesGrid/ServicesGrid';
 import SecurityMatrix from '@/components/home/SecurityMatrix/SecurityMatrix';
+import ThreatWidget from '@/components/home/ThreatWidget/ThreatWidget';
 import WhySkyTrust from '@/components/home/WhySkyTrust/WhySkyTrust';
 import ProcessSection from '@/components/home/ProcessSection/ProcessSection';
 import Testimonials from '@/components/home/Testimonials/Testimonials';
@@ -38,6 +39,7 @@ export default function Home() {
       <LiveStats />
       <ServicesGrid />
       <SecurityMatrix />
+      <ThreatWidget />
       <WhySkyTrust />
       <ProcessSection />
       <Testimonials />
