@@ -21,14 +21,14 @@
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 28px;
+  gap: 16px;
 }
 
 /* ---- Desktop Nav ---- */
 .nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
 }
 .navItem { position: relative; }
@@ -37,9 +37,9 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: var(--r-sm);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--t-fast), background var(--t-fast);
@@ -47,6 +47,7 @@
   background: none;
   border: none;
   font-family: var(--font-body);
+  white-space: nowrap;
 }
 .navBtn:hover, .navBtnActive {
   color: var(--text-primary);
@@ -54,12 +55,13 @@
 }
 
 .navLink {
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: var(--r-sm);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--t-fast), background var(--t-fast);
+  white-space: nowrap;
 }
 .navLink:hover, .navLinkActive {
   color: var(--text-primary);
@@ -354,7 +356,15 @@
   color: var(--accent);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1350px) {
+  .statusPill { display: none; }
+}
+
+@media (max-width: 1120px) {
+  .emergencyBtn { display: none; }
+}
+
+@media (max-width: 960px) {
   .nav, .actions { display: none; }
   .mobileToggle { display: flex; }
 }
