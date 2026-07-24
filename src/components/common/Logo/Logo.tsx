@@ -34,6 +34,7 @@ export default function Logo({ className, size = 'md', showText = true }: LogoPr
         <div className={styles.textGroup}>
           <span className={styles.brandMain}>
             Sky<span className={styles.brandAccent}>Trust</span>
+            <span className={styles.brandInc}>Inc.</span>
           </span>
         </div>
       )}

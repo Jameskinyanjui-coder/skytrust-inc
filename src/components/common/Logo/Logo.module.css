@@ -56,28 +56,30 @@
   margin-left: 1px;
 }
 
-.brandSub {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+.brandInc {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #0EA5E9;
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(37, 99, 235, 0.12) 100%);
-  padding: 3px 8px;
+  padding: 3px 7px;
   border-radius: 6px;
-  border: 1px solid rgba(14, 165, 233, 0.28);
-  margin-top: 4px;
-  display: inline-block;
-  width: fit-content;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  margin-left: 6px;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.15);
   transition: all 0.25s ease;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.logo:hover .brandSub {
+.logo:hover .brandInc {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.22) 0%, rgba(37, 99, 235, 0.22) 100%);
   border-color: rgba(14, 165, 233, 0.5);
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);
+  transform: translateY(-1px);
 }
 
-.sm .brandSub { font-size: 0.54rem; padding: 2px 6px; }
-.lg .brandSub { font-size: 0.72rem; padding: 4px 10px; }
+.sm .brandInc { font-size: 0.54rem; padding: 2px 5px; margin-left: 4px; }
+.lg .brandInc { font-size: 0.75rem; padding: 3px 8px; margin-left: 8px; }
